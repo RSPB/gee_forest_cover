@@ -15,5 +15,5 @@ The abovementioned command uses [CCITTFAX4](https://en.wikipedia.org/wiki/Group_
 In order to process **parallel** all files in a directory tree:
 
 ```
-find . -name '*.tif' -type f -print0 | parallel -0 gdal_translate -co NBITS=1 -co COMPRESS=CCITTFAX4 -co PHOTOMETRIC=MINISWHITE -ot Byte {} $newname {.}_CCITTFAX4.tif
+find . -name '*.tif' -type f -print0 | parallel -0 gdal_translate -co NBITS=1 -co COMPRESS=CCITTFAX4 -co PHOTOMETRIC=MINISWHITE -ot Byte {} {.}_CCITTFAX4.tif
 ```
